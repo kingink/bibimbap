@@ -11,7 +11,9 @@ img = Magick::Image.read(ARGV[0]).first
 width = nil
 height = nil
 
-img.change_geometry('400x400') do |cols, rows, img|
+size = ARGV[1] || '400'
+
+img.change_geometry("#{size}x#{size}") do |cols, rows, img|
   img.resize!(cols, rows)
   width = cols
   height = rows
