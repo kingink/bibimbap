@@ -1,5 +1,9 @@
 = bibimbap is a silly little image resizer
 
-== Note
+== Note:
 
 Basically I am tippsy and I want to play with rmagick
+
+== Dependencies:
+
+  $ gem install --no-ri --no-rdoc rmagick
