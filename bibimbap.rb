@@ -27,6 +27,7 @@ class Bibimbap
       end
 
       img = apply_vignette(img) if ARGV[2] == 'vignette'
+      img = apply_negate(img) if ARGV[2] == 'negate'
 
       file_name = "#{width}x#{height}_#{ARGV[0]}"
 
@@ -41,6 +42,10 @@ class Bibimbap
 
   def apply_vignette(img)
     img = img.vignette
+  end
+
+  def apply_negate(img)
+    img = img.negate
   end
 
 end
