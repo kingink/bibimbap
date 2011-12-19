@@ -28,6 +28,9 @@ class Bibimbap
 
       img = apply_vignette(img) if ARGV[2] == 'vignette'
       img = apply_negate(img) if ARGV[2] == 'negate'
+      img = apply_spread(img) if ARGV[2] == 'spread'
+      img = apply_oil_paint(img) if ARGV[2] == 'oil_paint'
+      img = apply_emboss(img) if ARGV[2] == 'emboss'
 
       file_name = "#{width}x#{height}_#{ARGV[0]}"
 
@@ -46,6 +49,18 @@ class Bibimbap
 
   def apply_negate(img)
     img = img.negate
+  end
+
+  def apply_spread(img)
+    img = img.spread
+  end
+
+  def apply_oil_paint(img)
+    img = img.oil_paint
+  end
+
+  def apply_emboss(img)
+    img = img.emboss
   end
 
 end
