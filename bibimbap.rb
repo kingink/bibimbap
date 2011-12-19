@@ -5,7 +5,7 @@ include Magick
 class Bibimbap
   def boom
     unless ARGV[0]
-      puts "\n\n\nYou need to specify a filename: bibimbap.rb <filename> [size,size,size]\nSizes are optional comma separated list\nif no sizes are specified, one image will be generated of 400 size\n\n\n"
+      puts "\n\n\nYou need to specify a filename: bibimbap.rb <filename> [size,size,size] [effect]\nSizes are optional comma separated list. If no sizes are specified, one image will be generated of 400 size\nEffect is optional, available effects: vignette, negate, spread, oil_paint, emboss.\n\n\n"
       exit
     end
 
