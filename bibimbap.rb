@@ -10,27 +10,16 @@ class Bibimbap
     option_parser = OptionParser.new do |opts|
       opts.banner = "Usage: bibimbap.rb [options] file1"
       opts.on("-s [SIZE]", "--size [SIZE]", 'Some description here') do |size|
-        unless size.nil?
-          options[:size] = size
-        else
-          options[:size] = '400'
-        end
+        options[:size] = size
       end
+      options[:size] = '400' if options[:size].nil?
       opts.on("-e [EFFECT]", "--effect [EFFECT]", 'Effect name [vignette|emboss|negate|oil_paint|spread]') do |effect|
-        unless effect.nil?
-          options[:effect] = effect
-        else
-          options[:effect] = nil
-        end
+        options[:effect] = effect
       end
       opts.on( '-h', '--help', 'Display this screen' ) do
-        puts opts
-        exit
+        help(opts)
       end
-      if ARGV.empty?
-        puts opts
-        exit
-      end
+      help(opts) if ARGV.empty?
     end
     
     option_parser.parse!
@@ -60,6 +49,11 @@ class Bibimbap
 
   def apply_effect(effect, img)
     img = img.send(effect)
+  end
+
+  def help(opts) 
+    puts opts
+    exit
   end
 end
 
