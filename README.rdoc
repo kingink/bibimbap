@@ -2,7 +2,7 @@
 
 == Note:
 
-Basically I am tippsy and I want to play with rmagick
+Light weight ruby interface to rmagick
 
 == Dependencies:
 
