@@ -1,8 +1,4 @@
-= bibimbap is a silly little image resizer
-
-== Note:
-
-Light weight ruby interface to rmagick
+= bibimbap light weight ruby interface to rmagick
 
 == Dependencies:
 
